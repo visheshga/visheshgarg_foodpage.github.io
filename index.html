@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Food Landing Site</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+*{
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    }
+html,body{
+    margin:0;
+    padding:0;
+    }
+.navbar{
+    z-index: 1;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background:white;
+    height:auto;
+    width: 100%;
+    }
+.nav_img{
+    float: left;
+    width:auto;
+    height:auto;
+    }
+.nav_img img{
+    height:80px;
+    width:100px;
+    }
+/*.menu{
+     display: inline-flex;
+     flex-direction: row;
+     flex-wrap: nowrap;
+     justify-content: center;
+     align-items: center;
+     text-decoration: none;
+     width:auto;
+    }*/
+.menu a{
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+    padding:10px 25px;
+    border-radius:30px ;
+    }
+.menu a:hover{
+    color:white;
+    background: #77530a;
+    transition: 0.4s ease-in;
+    }
+.b_btn{
+    float:right;
+    background: #bb7e05;
+    height:auto;
+    color:white;
+    font-size: 18px;
+    text-align: center;
+    padding:10px 50px;
+    cursor: pointer;
+    border-radius:30px;
+    }
+.b_btn:hover{
+    color:white;
+    background: #77530a;
+    transition: 0.4s ease-in;
+    }
+   
+.main_page{
+    background-image: url("main_img.jpg");
+    width: 100%;
+    height: 580px;
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    }
+.content{
+    margin-left: 10%;
+    display:inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    color: white;
+    }
+.content h3{
+    font-size: 40px;
+    }
+.content h1{
+    font-size: 80px;
+    }
+.content span{
+    color: rgb(238, 42, 8);
+    }
+#food{
+    color: rgb(218, 155, 74);
+    }
+.content button{
+    color: white;
+    background-image: radial-gradient(rgb(158, 125, 67),rgb(226, 144, 37));
+    border:2px solid white;
+    font-size: 20px;
+    border-radius: 30px;
+    padding:10px 25px;
+    width: 60%;
+    }
+.card_container{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 10px;
+    }
+.card{
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    height:auto;
+    width:auto;
+    }
+.card img{
+    width:240px;
+    height:220px;
+    transition: .3s ease-in-out;
+    }
+.card img:hover{
+    transform: scale(1.1);
+    }
+.card h3{
+    font-size: 25px;
+    }
+.for_back_image{
+    background-image: url("bg_img2.avif");
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    }
+.about{
+    background-image: linear-gradient( to right, #ededea,white);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: auto;
+    }
+.about_info{
+    margin-left: 10%;
+    display:inline-flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    height: auto;
+    }
+.about_info span{
+    color: red;
+    }
+.about_info h1{
+    font-family: cursive,Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    }
+.about_info h3{
+    font-size: 25px;
+    }
+.about_info p{
+    width: 100%;
+    font-size: 20px;
+    }
+ .about_image{
+    display:inline-flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    }
+.about_image img{
+    width:80%;
+    height:100%;
+    }
+.bg_blank{
+    text-align: center;
+    height: auto;
+    color: white;
+    }
+.bg_blank h1{
+    font-size: 40px;font-weight: 700;text-shadow: 3px 3px 3px black;
+    }
+.bg_blank h2{
+    font-size: 50px;color: red;
+    }
+.bg_blank p{
+    font-size: 40px;text-shadow: 3px 3px 3px black;
+    }
+.shop_n {
+    font-size: 18px;
+    text-align: center;
+    padding:10px 50px;
+    cursor: pointer;
+    border-radius:30px;
+    color:white;
+    background:red;
+    border:2px solid black;
+    width: auto;
+    }
+.process_container{
+    background:white;
+    transform: translateY(50%);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 100%;
+    }
+.process{
+    box-shadow: 12px -8px 0px rgb(231, 231, 125);
+    background:white;
+    transform: translateY(-50%);
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    height:auto;
+    width:420px;
+    transition-duration: 0.4s;
+    }
+.process:hover{
+    transform: translateY(-65%);
+    }
+.process img{
+    box-shadow: 8px 8px 5px rgb(231, 231, 125);
+    border-radius: 10px;
+    transform: translateY(30%);
+    width:150px;
+    height:150px;
+    }
+.process h3{
+    font-size: 30px;
+    color: red;
+    }
+.order{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: auto;
+    }
+.order_info{
+    margin-left: 10%;
+    display:inline-flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: auto;
+    }
+.order_info span{
+    color: red;
+    }
+.order_info h1{
+    font-size: 40px;
+    color: rgb(233, 219, 27);
+    }
+.order_info h2{
+    font-size: 50px;
+    }
+.order_image{
+    display:inline-flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    }
+.order_image img{
+    width:80%;
+    height:100%;
+    }
+.our_supporter{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto; 
+    justify-content: center;
+    }
+.our_supporter img{
+    width:220px;
+    height:160px;
+    }
+.menu {
+z-index: 1;
+  overflow: hidden;
+  background-color: white;
+}
+.menu a {
+    float: left;
+    display: block;
+    }
+.menu .icon {
+    display: none;
+    }
+#topfood{
+    text-align: center; font-size: 40px; color: #77530a;
+    }
+#catig{
+    text-align: center; font-size: 50px;
+    }
+#howitworks{
+    color:yellow;font-size: 40px;text-align: center;
+    }
+#simp{
+   color:white; text-shadow:3px 3px 3px black ; font-size: 50px; text-align: center;
+    }
+.b1b2{
+    display: inline-flex;
+    gap:20px;
+    flex-direction: row;
+    align-items: center;
+    }
+
+.b1{
+    border:none;
+    background: yellow;
+    color:black;
+    font-size: 18px;
+    height:auto;
+    padding:10px 50px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    border-radius:30px;
+    width: auto;
+    }
+.b2{
+    background: black;
+    color:white;
+    border:none;
+    font-size: 18px;
+    height:auto;
+    font-weight: bold;
+    padding:10px 50px;
+    cursor: pointer;
+    border-radius:30px ;
+    text-align: center;
+    cursor: pointer;
+    width: auto;
+    }
+    .newsletter_container{
+    background-image: url("newsletter.jpeg");
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    background-attachment: fixed; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:40px 0px;
+    }
+    .newsletter_container h1{
+        font-size: 30px;
+        color: black;
+    }
+    .newsletter_container h2{
+        font-size: 30px;
+        color: black;
+    }
+    .inputsubmit{
+        display:inline-flex;
+        flex-direction: row;
+        align-items: center;
+        height: auto;
+        justify-content: space-between;
+    }
+    .news_page{
+        background: white;
+        border:2px solid red;
+        width:500px;
+        height:50px;
+    }
+    .news_btn{
+        color:white;
+        background:red;
+        width:auto;
+        border: none;
+        height:50px;
+        font-size: 18px;
+        text-align: center;
+        padding:10px 50px;
+        cursor: pointer;
+    }
+    .inputsubmit input[type="text"]::placeholder{
+        font-size: 18px;
+    }
+@media screen and (max-width: 950px) {
+    .navbar{align-items: flex-start;justify-content: space-between;}
+    .menu a {display: none;}
+    .nav_img img {display: none;width:50px;height:50px;}
+    .menu a.icon {
+        float: none;
+        display: block;
+        }
+        }
+@media screen and (max-width: 950px) {
+    .menu.responsive {position: relative;}
+    .menu.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .menu.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+        }
+    }
+@media screen  and (max-width: 990px) {
+    .content h3{
+    font-size: 30px;
+    }
+    .content h1{
+    font-size: 50px;
+    }
+    .content button{
+    font-size: 20px;
+    border-radius: 30px;
+    padding:10px 25px;
+    width: auto;
+    }
+    .b_btn,.shop_n,.b1,.b2,.news_btn{
+        font-size: 16px;
+        padding:8px 40px;
+        }
+.bg_blank h1,.bg_blank p,.order_info h1,.about_info h1, #topfood, #howitworks,.newsletter_container h1{
+    font-size: 28px;
+    }
+.bg_blank h2,.order_info h2,.about_info h2, #catig, #simp,.newsletter_container h2{
+    font-size: 35px;
+    }
+.process h3,.about_info h3,.card h3,.b1b2 h3{
+    font-size: 22px;
+    }
+.order,.about{
+    flex-direction: column-reverse;
+    }
+.about_info,.order_info{
+    margin-left: 0%;
+    align-items: center;
+    }
+.about_image,.order_image{
+    align-items: center;
+    }
+.about_image img,.order_image img{
+    width:400px;
+    height:400px;
+    }
+.process_container{
+    transform: none;
+    }
+.process{
+    box-shadow: none;
+    transform: none;
+    width:220px;
+    }
+.process:hover{
+    transform: none;
+    }
+.process img{
+    width:140px;
+    height:140px;
+    }
+.card img{
+    width:160px;
+    height:150px;
+    }
+.our_supporter img{
+    width:150px;
+    height:120px;
+    }
+}
+@media screen  and (max-width: 740px) {
+    .main_page{
+        height:450px;
+    }
+.content h3{
+    font-size: 30px;
+    }
+.content h1{
+    font-size: 40px;
+    }
+.b_btn,.shop_n,.b1,.b2,.news_btn{
+    font-size: 16px;
+    padding:8px 30px;
+    }
+.content button{
+    font-size: 16px;
+    border-radius: 30px;
+    padding:8px 22px;
+    width: auto;
+    }
+    .news_btn{
+        height: 45px;
+    }
+    .news_page{
+        width:400px;
+        height:45px;
+    }
+.bg_blank h1,.bg_blank p,.order_info h1,.about_info h1, #topfood, #howitworks,.newsletter_container h1{
+    font-size: 22px;
+    }
+.bg_blank h2,.order_info h2,.about_info h2, #catig, #simp,.newsletter_container h2{
+    font-size: 28px;
+    }
+.process h3,.about_info h3,.card h3{
+    font-size: 18px;
+    }
+.about_image img,.order_image img{
+    width:300px;
+    height:300px;
+    }
+.process img{
+    width:120px;
+    height:120px;
+    }
+.card img{
+    width:130px;
+    height:130px;
+    }
+.our_supporter img{
+    width:120px;
+    height:90px;
+    }
+}
+@media screen  and (max-width: 635px) {
+    .about_info h3,.order_info h2,.newsletter_container h2,.about_info h1,.order_info h1{
+text-align: center;
+    }
+    .card img{
+    width:130px;
+    height:130px;
+    }
+}
+@media screen  and (max-width: 580px) {
+    .card_container{
+       gap: 20px;
+    }
+    .card img{
+    width:180px;
+    height:180px;
+    }
+    .news_page{
+        width:300px;
+        height:40px;
+    }
+    .news_btn{
+        height:40px;
+    }
+}
+@media screen  and (max-width: 460px) {
+    .process_container{
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    }
+    .news_page{
+        width:280px;
+    }
+}
+@media screen  and (max-width: 430px) {
+    .inputsubmit{
+        flex-direction: column;
+        gap:10px;
+    }
+    .news_btn,.news_page{
+        width:345px;
+}
+}
+@media screen  and (max-width: 370px) {
+.content h3{
+    font-size: 25px;
+    }
+.content h1{
+    font-size: 35px;
+    }
+.b1b2{
+    flex-direction: column;
+    align-items: center;
+    }
+.b1,.b2{
+    width: 100%;
+    }
+.news_btn,.news_page{
+        width:280px;
+}
+.b_btn,.shop_n,.b1,.b2,.news_btn{
+    font-size: 16px;
+    padding:8px 35px;
+    }
+.content button{
+    font-size: 16px;
+    border-radius: 30px;
+    padding:8px 12px;
+    width: auto;
+    }
+.bg_blank h1,.bg_blank p,.order_info h1,.about_info h1, #topfood, #howitworks,.newsletter_container h1{
+    font-size: 20px;
+    }
+.bg_blank h2,.order_info h2,.about_info h2, #catig, #simp,.newsletter_container h2{
+    font-size: 24px;
+    }
+.process h3,.about_info h3,.card h3{
+    font-size: 16px;
+    }
+    .about_image img,.order_image img{
+    width:250px;
+    height:250px;
+    }
+.card img{
+    width:130px;
+    height:110px;
+    }
+}
+@media screen  and (max-width: 350px) {
+    .main_page{
+        height:360px;
+    }
+    .content h1{
+        font-size: 30px;
+    }
+    .content button{
+        font-size: 13px;
+        padding: 8px 3px;
+}
+}
+@media screen  and (max-width: 290px) {
+    .news_btn,.news_page{
+        width:220px;
+}
+}
+@media screen and (max-width: 800px) {
+.process{
+    width:100%;
+    }
+}
+@media screen and (max-width: 450px) {
+.card_container{
+    flex-direction: none;
+    }
+}
+
+
+.popup{
+    background-color: #ffffff;
+    width: 420px;
+    padding: 30px 40px;
+    position: absolute;
+    right: 8%;
+    top: 60%;
+    border-radius: 8px;
+    font-family: "Poppins",sans-serif;
+    display: none; 
+    text-align: center;
+}
+.popup button{
+    display: block;
+    margin:  0 0 20px auto;
+    background-color: transparent;
+    font-size: 30px;
+    color: #ffffff;
+	background: #dbe273;
+	border-radius: 100%;
+	width: 40px;
+	height: 40px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.popup p{
+    font-size: 14px;
+    text-align: justify;
+    margin: 20px 0;
+    line-height: 25px;
+}
+.footer_content{
+    width: auto;
+    height:auto;
+    display:flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background:black;
+    color: white;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
+    gap: 10px;
+    }
+.f{
+    display:inline-flex;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: auto;
+    gap: 10px;
+    }
+.f h3{
+    font-size: 20px;
+    color: rgb(255,204,0);
+    }
+.f a{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    }
+.f a:hover{
+   cursor:pointer;
+    }
+.f button[type="button"]{
+    border-radius: 5px;
+    border: 1px solid black;
+}
+.f button[type="button"] img{
+    width: 160px;
+    height:42px;
+    border-radius: 5px;
+}
+.f1{
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    width: auto;
+    }
+.f1 input[type="text"]{
+    width: auto;
+    padding: 12px 18px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    height: auto;
+    }
+.f1 h5{
+    color:white;
+    font-size: 16px;
+    }
+.f1 h4:hover{
+    color:rgb(255,204,0);
+    }
+.f1 a{
+    font-size: 150%;
+    color: white;
+    text-decoration: none;
+    }
+.f1 a:hover{
+    color:rgb(255,204,0);
+    }
+.footer_bottom{
+    display:flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: auto;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    justify-content: space-between;
+    gap: 10px;
+    background:black;
+    }
+.f1 button[type="button"]{
+    border: white;
+    background-color:white;
+    color:red;
+    width: auto;
+    border-radius: 4px;
+    height: auto;
+    padding:12px 20px;
+    font-size: 16px;
+    }
+.f1 button[type="button"]:active {
+    transform: translateY(2px);
+    }
+.f1 button[type="button"]:hover{
+    background-color:rgb(255,204,0);
+    color: black;
+    }
+.f1 button[type="button"] span{
+    color:black;
+    }
+.copyright{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    align-items: center;
+    height:auto;
+    color: white;
+    width: 100%;
+    border-top: 1.5px solid rgb(61, 60, 60);
+    }
+</style>
+</head>
+<body>
+
+    <div class="popup">
+        <button id="close">&times;</button>
+        <p>
+           Chech Our Latest discounts on food Delievery.!Hurray
+        </p>
+        <div class="b1" style="background: rgb(228, 167, 87);">Lets' Starts</div>
+    </div>
+    <div class="navbar" id="topnav">
+    <div class="nav_img"> <img src=" food_logo.png"></div>
+    <div class="menu " id="myTopnav">
+        <a href="#home" class="active">Home</a>
+        <a href="#news">Our Menu</a>
+        <a href="#contact">About</a>
+        <a href="#about">Gallery</a>
+        <a href="#about">Contact</a>
+        <a href="#about">Blog</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
+      </div>
+      <div class="b_btn"id="myBtn">Order Food</div>
+    </div>
+        <div class="main_page">
+            <div class="content"><h3>Welcome<span>!</span></h3><h1><span>We</span> serve the <br><span id="food">richest food</span> in the city<span>!</span></h1>
+                <button>Home delievery! Your food at your door</button>
+            </div>
+        </div>
+        <h1 id="topfood">Top Foods</h1>
+        <h2 id="catig">Our Categories</h2>
+        <div class="card_container">
+            <div class="card"><img src=" pizza.jfif"><h3>Pizza</h3></div>
+            <div class="card"><img src=" burger.jfif"><h3>Burger</h3></div>
+            <div class="card"><img src=" pasta.png"><h3>Pasta</h3></div>
+            <div class="card"><img src=" pizza.jfif"><h3>Pizza</h3></div>
+        </div>
+        <div class="card_container">
+            <div class="card"><img src=" cake.avif"><h3>Cake</h3></div>
+            <div class="card"><img src=" shakes.png"><h3>Shakes</h3></div>
+            <div class="card"><img src=" dessert.jfif"><h3>Desserts</h3></div>
+            <div class="card"><img src=" pizza.jfif"><h3>Pizza</h3></div>
+        </div>
+        <div class="for_back_image">
+            <div class="bg_blank">
+                <h1>Enjoy Great Receipe</h1>
+                <h2>Simple And Delicious Food</h2>
+                <p>Flat 20% Discount</p>
+                <button class="shop_n">SHOP NOW</button>
+                </div><br>
+<div class="about">
+    <div class="about_info">
+        <h1>TASTY <span>FOOD</span> </h1>
+        <h1>Expolre Our Nearest Branch</h1>
+        <h3>Largest Business Restaurant Food Facility in the World.</h3></div>
+    <div class="about_image"><img src=" burger.jfif"></div>
+</div>
+   <h1 id="howitworks">How Its Work</h1>
+   <h2  id="simp">Simple Process</h2><br><br><br>
+<div class="process_container">
+        <div class="process"><img src=" your_order.png"><br><br><h3>Your Order</h3></div>
+        <div class="process"><img src=" cash_on.png"><br> <br><h3>Cash on Delievery</h3></div>
+        <div class="process"><img src=" receive_order.png"><br><br><h3>Receive order</h3></div>
+    </div> 
+        </div>
+        <br><br><br><br><br><br><br><br>
+        <div class="order">
+            <div class="order_info">
+                <h1>DINE IN OR TAKE AWAY</h1>
+                <h2>Get Your Order 24/7 Right At Your Doorsteps</h2>
+                <div class="b1b2">
+                <button class="b1">ORDER FOOD</button>
+                <button class="b2">VISIT NOW</button></div>
+              </div>
+            <div class="order_image"><img src=" online_delievery1.png"></div>
+        </div><br>
+        <div class="newsletter_container">
+            <h1>Newsletter</h1>
+            <h2>Will be used in accordance with our Privacy policy</h2>
+            <div class="inputsubmit">
+            <input type="text"  placeholder="Your email address" class="news_page"><button type="submit" class="news_btn">Subscribe</button></div>
+        </div><br>
+        <h1 id="topfood">Our Food Parteners</h1>
+        <div class=" our_supporter ">
+           <img src=" sup4.avif">
+           <img src=" sup1.avif">
+            <img src=" sup2.avif">
+            <img src=" sup3.avif">
+            <img src=" sup5.avif">
+            <img src=" sup6.avif">
+        </div>
+        <footer>
+            <footer>
+                <div class="footer_content">
+                    <div class="f">
+                        <h3>About Us</h3>
+                        <a href="#">News</a>
+                        <a href="#">Contacts</a>
+                        <a href="#">Vacancies</a>
+                        <a href="#">Branch news</a>
+                        <a href="#">About the Company</a>
+                    </div>
+                    <div class="f"><h3>Services</h3>
+                        <a href="#">Rates</a>
+                        <a href="#">Documents</a>
+                        <a href="#">Track a Shipment</a>
+                        <a href="#">Calculate the cost</a>
+                        <a href="#">Find the nearest office</a>
+                    </div>
+                    <div class="f"><h3>Contact Us</h3>
+                        <a href="#">FAQ</a>
+                        <a href="#">Group</a>
+                        <a href="#">Notification</a>
+                        <a href="#">Write to chat</a>
+                        <a href="#">Privacy policy</a>
+                    </div>
+                    <div class="f"><h3>Download apps</h3>
+                        <div class="f">
+                            <button type="button" class="buttons"><img src="F:\web develpoment\Taxi_Booking_site\taxi_Image\g1-logo.jpg"></button>
+                            <button type="button"  class="buttons"><img src="F:\web develpoment\Taxi_Booking_site\taxi_Image\app-store.jpg"></button>
+                        </div>
+                            <h3>Follow Us</h3>
+                                <div class="f1">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                </div>
+                    </div>
+                    <div class="footer_bottom">
+                        <div class="f1">
+                            <h4>Delievery</h4>
+                            <h4>For Business</h4>
+                            <h4>Rates</h4>
+                            <h4>Become a Partner</h4>
+                            <h4>Contacts</h4>
+                        </div>
+                        <div class="f1">
+                            <input type="text" placeholder="Enter your mail">
+                            <button type="button">Subscribe <span>Newsletter</span> <span>&#8594;</span></button>
+                        </div>
+                    </div>
+                    <div class="copyright">
+                        <div>&copy; 2023 All rights reserved.</div>
+                    </div>
+                    
+                </div>
+               
+            </footer>
+    </footer>
+        <script>
+            function myFunction() {
+              var x = document.getElementById("myTopnav");
+              if (x.className === "menu") {
+                x.className += " responsive";
+              } else {
+                x.className = "menu";
+              }
+            }
+
+            window.addEventListener("load", function(){
+    setTimeout(
+        function open(event){
+            document.querySelector(".popup").style.display = "block";
+        },
+        2000 
+    )
+});
+
+
+document.querySelector("#close").addEventListener("click", function(){
+    document.querySelector(".popup").style.display = "none";
+});
+            </script>
+</body>
+</html>
